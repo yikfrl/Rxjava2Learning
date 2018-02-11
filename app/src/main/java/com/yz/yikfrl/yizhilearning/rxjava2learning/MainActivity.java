@@ -116,4 +116,19 @@ public class MainActivity extends Activity {
             }
         });
     }
+
+    private void zip(){
+        Observable.zip(getStringObservable(),getIntegerObservable(),)
+    }
+
+    private Observable<String> getStringObservable(){
+        return Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> e) throws Exception {
+                if(!e.isDisposed()){
+                    e.onNext("A");
+                }
+            }
+        });
+    }
 }
